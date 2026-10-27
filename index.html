@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f6f8" />
+    <meta name="description" content="Painel de detecção facial em tempo real com MediaPipe." />
+    <title>Visão Facial — MediaPipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <style>
+      .file-mode-message{max-width:620px;margin:12vh auto;padding:36px;background:#fff;border:1px solid #e8eaee;border-radius:14px;box-shadow:0 12px 40px #20253212;color:#252b38;font:14px/1.65 'DM Sans',sans-serif}
+      .file-mode-message h1{margin:0 0 10px;font:700 25px/1.2 'Manrope',sans-serif;letter-spacing:-.5px}
+      .file-mode-message p{margin:8px 0;color:#707783}
+      .file-mode-message strong{color:#28313a}
+      .file-mode-step{margin-top:20px;padding:14px 16px;background:#f1faf6;border:1px solid #dcefe6;border-radius:9px}
+      .file-mode-step code{font-weight:700;color:#118b68}
+      @media(max-width:700px){.file-mode-message{margin:8vh 16px;padding:24px}}
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+    <script>
+      if (location.protocol === 'file:') {
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelector('#app').innerHTML = `
+            <main class="file-mode-message">
+              <h1>Abra pelo link do site</h1>
+              <p>Este arquivo precisa ser servido por um site para carregar os recursos do MediaPipe. Aberto como arquivo local, o navegador bloqueia o modelo e a câmera.</p>
+              <div class="file-mode-step"><strong>Como usar:</strong><p>Peça o link HTTPS do GitHub Pages ao responsável pelo projeto. Não é necessário baixar o repositório.</p></div>
+            </main>`;
+        });
+      }
+    </script>
+  </body>
+</html>
